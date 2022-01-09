@@ -18,14 +18,15 @@ def index():
 
 @app.route("/post", methods=['POST'])
 def post():
-    departamento = request.json['departamento']
-    add =   """ 
-            INSERT INTO departamentos (departamento) VALUES ('{0}')
-            """.format(departamento)
-    cnx = getConnection()                           #obtengo conexion
-    cursor = cnx.cursor()                           #cursor
-    cursor.execute(add)                             #ejecuto el insert, seguido de lo que insertare
-    id = cursor.lastrowid                           #obtener id insertado                    
+    var = request.body
+    print(var)
+    add_departamento = ("INSERT INTO departamentos "
+                        "(departamento) "
+                        "VALUES (%s)")
+    cnx = getConnection()       #obtengo conexion
+    cursor = cnx.cursor()       #cursor
+    cursor.execute(add_departamento, var.departamento)    #ejecuto el insert, seguido de lo que insertare
+    id = cursor.lastrowid                                 #obtener id insertado                    
     print(id)         
     cnx.commit()                                          #guardar cambios
     cursor.close()                                        #cerrar conexion y cursor

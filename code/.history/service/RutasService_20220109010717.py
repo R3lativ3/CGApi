@@ -9,7 +9,7 @@ class RutasService():
     def agregar_ruta(self, nombreRuta, idSede, idMunicipio):
         try:
             connection = getConnection()
-            cursor = connection.cursor()
+            cursor = connection.getcursor()
             add_ruta =   """ 
                     INSERT INTO rutas (nombreRuta, idSede, idMunicipio) 
                                 VALUES ('{0}', {1}, {2})

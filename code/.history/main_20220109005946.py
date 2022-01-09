@@ -4,7 +4,7 @@ from common.connection import getConnection
 from controller.RutasController import rutas_blueprint 
 
 app = Flask(__name__)
-app.register_blueprint(rutas_blueprint, url_prefix='/rutas')
+app.register_blueprint(rutas_blueprint, url_prefix='/cobradores')
 
 @app.route("/")
 def index():
