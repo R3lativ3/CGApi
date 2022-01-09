@@ -9,7 +9,7 @@ def get_connection():
         return e
 
 
-def liberar_conexion(connection, cursor):
+def liberar_conexion(self, connection, cursor):
     connection.commit()
     cursor.close()
     connection.close()

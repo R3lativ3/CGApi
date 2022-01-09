@@ -16,7 +16,6 @@ def index():
     data = cursor.fetchall()
     return jsonify({'rutas': data})
 
-
 @app.route("/post", methods=['POST'])
 def post():
     departamento = request.json['departamento']

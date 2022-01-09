@@ -1,0 +1,19 @@
+POST http://127.0.0.1:5000/post
+content-type: application/json
+
+{
+    "departamento": "quiche"
+}
+
+### Obtener todas las rutas
+GET  http://127.0.0.1:5000/rutas/
+
+### Agregar una ruta
+POST http://127.0.0.1:5000/rutas/agregar_ruta 
+content-type: application/json
+
+{
+    "ruta": "R03",
+    "departamento": 1,
+    "municipio": 1
+}

@@ -35,8 +35,7 @@ class RutasService():
         except Exception as e:
             return e
 
-    #   Funcion para validar si la peticion del cliente es correcta, 
-    #   si lo es, devolver diccionario con la informacion.
+    #   Funcion para validar si los parametros enviados son los esperados en el backend
     def es_ruta(self, request):                                                 
         try:
             rutax = request.json['ruta']
