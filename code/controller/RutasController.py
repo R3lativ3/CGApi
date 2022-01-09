@@ -12,7 +12,7 @@ def index():
 
 
 #   Endpoint o ruta para agregar una ruta
-@rutas_blueprint.route('/agregar_ruta', methods=['post'])
+@rutas_blueprint.route('/agregar-ruta', methods=['post'])
 def add_ruta():
     ruta = rutas_service.es_ruta(request)                                           #   Obtener diccionario de ruta en base al request enviado desde el cliente
     if ruta is None :  return jsonify({'error': "invalid request"}), 400            #   Retornar invalid request si lo enviado por el cliente no es una ruta valida
@@ -22,7 +22,7 @@ def add_ruta():
 
 #   Enpoint que crea una ruta sin validar los parametros de entrada, 
 #   la version refactorizada es la de arriba, fn: add_ruta()
-@rutas_blueprint.route('/agregar_ruta', methods=['post'])
+@rutas_blueprint.route('/agregar-ruta-sin-validar', methods=['post'])
 def add_ruta_sin_validar():
     rutas_service = RutasService()                                                  #   Instancia de clase que contiene la logica
 

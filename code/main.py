@@ -23,7 +23,7 @@ def post():
     add =   """ 
             INSERT INTO departamentos (departamento) VALUES ('{0}')
             """.format(departamento)
-    cnx = getConnection()                           #obtengo conexion
+    cnx = get_connection()                           #obtengo conexion
     cursor = cnx.cursor()                           #cursor
     cursor.execute(add)                             #ejecuto el insert, seguido de lo que insertare
     id = cursor.lastrowid                           #obtener id insertado                    

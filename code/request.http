@@ -6,7 +6,7 @@ GET  http://127.0.0.1:5000/rutas/
 
 
 ### Agregar una ruta
-POST http://127.0.0.1:5000/rutas/agregar_ruta 
+POST http://127.0.0.1:5000/rutas/agregar-ruta 
 content-type: application/json
 
 {
