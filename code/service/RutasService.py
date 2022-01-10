@@ -1,4 +1,4 @@
-from common.connection import get_connection, liberar_conexion
+from common.connection import get_connection, liberar_conexion, liberar_conexion_commit
 
 class RutasService():
 
@@ -12,6 +12,7 @@ class RutasService():
                                 WHERE a.idSede = b.id and a.idMunicipio = c.id """)
             cursor.execute(select_ruta)
             data = cursor.fetchall()
+            liberar_conexion(connection, cursor)
             return data
         except Exception as e:
             return e
@@ -30,7 +31,7 @@ class RutasService():
             id = cursor.lastrowid   
             print(id)
             #   Ejecutar commit, liberar conexion y cursor
-            liberar_conexion(connection, cursor)
+            liberar_conexion_commit(connection, cursor)
             return id
         except Exception as e:
             return e
