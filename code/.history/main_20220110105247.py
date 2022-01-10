@@ -16,7 +16,7 @@ def index():
     query = ("select * from prestamos")
     cursor.execute(query)
     data = cursor.fetchall()
-    return jsonify({'Prestamos': data})
+    return jsonify({'rutas': data})
 
 
 @app.route("/post", methods=['POST'])
