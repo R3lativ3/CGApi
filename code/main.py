@@ -1,10 +1,12 @@
 from flask import Flask, jsonify, request
 from config import config
 from common.connection import get_connection
-from controller.RutasController import rutas_blueprint 
+from controller.RutasController import rutas_blueprint
+from controller.CobrosController import cobros_bp 
 
 app = Flask(__name__)
 app.register_blueprint(rutas_blueprint, url_prefix='/rutas')
+app.register_blueprint(cobros_bp, url_prefix='/cobros')
 
 @app.route("/")
 def index():

@@ -10,6 +10,14 @@ def get_connection():
 
 
 def liberar_conexion(connection, cursor):
+    cursor.close()
+    connection.close()
+
+def liberar_conexion_commit(connection, cursor):
     connection.commit()
     cursor.close()
     connection.close()
+
+def get_cursor(connection):
+    cursor = connection.cursor(buffered=True , dictionary=True)
+    return cursor

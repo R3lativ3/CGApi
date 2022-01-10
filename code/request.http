@@ -1,8 +1,26 @@
+
+
+###                                                 Peticiones a rutas
 ### Obtener todas las rutas
 GET  http://127.0.0.1:5000/rutas/
 
 
+### Agregar una ruta
+POST http://127.0.0.1:5000/rutas/agregar-ruta 
+content-type: application/json
 
+{
+    "ruta": "R04",
+    "idSede": 1,
+    "idMunicipio": 1
+}
+
+
+
+
+###                                                 Peticiones a cobros
+### Obtener todos los cobros
+GET  http://127.0.0.1:5000/cobros/
 
 
 ### Agregar una ruta
