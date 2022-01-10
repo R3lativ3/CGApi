@@ -23,12 +23,13 @@ content-type: application/json
 GET  http://127.0.0.1:5000/cobros/
 
 
-### Agregar una ruta
-POST http://127.0.0.1:5000/rutas/agregar-ruta 
+### Agregar un cobro
+POST http://127.0.0.1:5000/cobros/agregar-cobro 
 content-type: application/json
 
 {
-    "ruta": "R04",
-    "idSede": 1,
-    "idMunicipio": 1
+    "cobro": 100.00,
+    "latitud": 0,
+    "longitud": 0,
+    "prestamo": 3
 }
