@@ -28,7 +28,7 @@ def add_cobro():
 #   El primer parametro es el nombre con el que se expondra la ruta,
 #   El segundo parametro es con el tipo de metodo que se expondra la ruta.
 @cobros_bp.route('agregar-cobro-sin-refactor', methods=['post'])
-def add_cobro2():
+def add_cobro():
     #   Paso 1: Obtener los valores que nos envia el cliente (una pagina, una app, otro sistema, etc...)
     peticion_cobro = request.json['cobro']
     peticion_latitud = request.json['latitud']
@@ -75,7 +75,7 @@ def add_cobro2():
 #   Ejemplo de consulta
 #   Si no se especifica el tipo de acceso, se sobreentiende que serà del tipo GET
 @cobros_bp.route('/cobro-ejemplo')
-def index2():
+def index():
     #   Paso 1 (acceso a la base de datos): Crear una conexion a la base de datos
     connection = get_connection()
     #   Crear un cursor, el cual nos servira para manejar o escribir en la base de datos, 
